@@ -2,14 +2,16 @@ import csv
 from distutils import text_file
 import xml.etree.cElementTree as ET
 import yaml
+import json
 
 
-
+#csv file
 with open ('../files/my_birds.csv','r') as csv_file:
     for row in csv.DictReader(csv_file): #DictReader() class can be used to read a CSV file as a dictionary.
         print(row)        
     csv_file.close()
 
+#txt file    
 with open('../files/my_birds.txt') as file:
     file_contents = file.read()
     print(file_contents)
@@ -26,7 +28,11 @@ for book in root:
 with open ("../files/my_birds.yaml","r") as s:
     y = yaml.safe_load(s)
     print: y ["imie"]
- 
+
+#json file    
+with open ("../files/my_birds.json") as json_file:
+    data = json.load(json_file)
+print(data)
 
 
        
